@@ -1,0 +1,10 @@
+Author: Anish Karumuri, Calvin Phuong, Eric Su, Hung-Nghi Vu, Yutaka Roberts 
+
+1) Application is easy to navigate.
+    - Have user navigate through web pages.  
+    - They should be able to clearly know what specific page to click to go to
+
+2) Selected Location Data
+     - User selects location 
+     - The hours of opertation is displayed
+     - The address is displayed

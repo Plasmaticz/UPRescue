@@ -1,0 +1,153 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic;
+}
+
+#admin{
+  display:none;
+}
+
+ header{
+ 	background-image:linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/um.jpg);
+ 	height: 100vh;
+ 	background-size: cover;
+ 	background-position: center ;
+ }
+
+/* Top Navigation Bar */
+.topnav {
+    display: flex; /* Use flexbox to align children */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow the items to wrap on small screens */
+    background-color: transparent;
+    padding: 10px 50px; /* Padding for the navigation, adjust as needed */
+}
+
+.topnav a, .topnav select {
+    padding: 14px 16px; /* Spacing inside the links */
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Text color for the links */
+    font-size: 15px; /* Size of the font */
+    text-align: center; /* Center the text inside the links */
+    background-color: transparent; /* Background color of the links */
+    border: none; /* No borders */
+    outline: none; /* Removes outline */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.topnav a:active {
+    background-color: blueviolet;
+    color: white;
+}
+
+.topnav #languageSwitch:hover {
+  background-color: white;
+  color: black;
+} 
+
+.topnav #languageSwitch:active {
+  background-color: blueviolet;
+  color: white;
+} 
+.topnav select {
+    appearance: none; /* Disable default browser appearance */
+    -webkit-appearance: none; /* Also for Safari */
+    background: url(../images/drop-down-arrow.png) no-repeat right 14px center / 12px 12px; /* Adjust size and position accordingly */
+    background-color: transparent; /* Transparent background */
+    border-radius: 0; /* Optional: if you want to remove the border-radius */
+    padding-right: 30px; /* Add padding to prevent text from overlapping the arrow */
+    cursor: pointer; /* Ensures the cursor changes to pointer on hover */
+    color: white; /* Text color for consistency */
+}
+
+.topnav option {
+  color: black;
+}
+
+/* Link Styling */
+a {
+	color: #00B7FF; 
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.logo img {
+	float: left;
+	width: 100px;
+	height: auto;
+}
+
+.main{
+	max-width: 1300px;
+	margin: auto;
+}
+
+.title{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.title h1{
+	color: #fff;
+	font-size: 50px;
+}
+
+.descriptions{
+	color:#fbfcfd;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	right: 5%;
+	transform: translateY(-50%);
+	z-index: 2;
+	background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+	padding: 20px; /* Add some padding around the text */
+	border-radius: 8px; /* Rounded corners for the box */
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow for depth */
+	font-size: 25px; /* Increase font size for better readability */
+	line-height: 1.6; /* Improve line spacing */
+}
+
+h1, h2, h3, h4 {
+	font-size: 30px;
+	margin: 10px 0;
+}
+
+@media (max-width: 1000px) {
+	/* Adjustments for smaller screens */
+	.title h1, h2, h3, h4 {
+		font-size: 50px; /* Reduce title size on small screens */
+	}
+	.descriptions {
+		font-size: 16px; /* Adjust font size for readability */
+		padding: 15px; /* Reduce padding */
+		transform: translateY(-100%);
+	} 
+	
+	h1 {
+		font-size: 33px;
+	}
+
+	.topnav {
+        padding: 10px; /* Smaller padding on smaller screens */
+    }
+
+	.topnav a {
+		padding: 14px 16px; /* Spacing inside the links */
+		text-decoration: none; /* Removes underline from links */
+		color: white; /* Text color for the links */
+		font-size: 23px; /* Size of the font */
+		text-align: center; /* Center the text inside the links */
+	}
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+    @Author: Anish Karumuri, Hung-Nghi Vu, Yutaka Roberts, Eric Su, Calvin Phuong
+-->
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="javascripts/login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="topnav">
+            <a href="index.html">Map</a>
+            <a href="home.html">Suggestions</a>
+            <a href="resourceIndex.html">Resource Index</a>
+            <a href="usermanual.html">User Manual</a>
+            <a href="about.html">About</a>
+            <a href="login.html" id = "admin">Admin</a>
+        </div>
+
+        <div class="login-form">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="button" onclick="validateLogin()">Login</button>
+        </div>
+    </div>
+</body>
+</html>

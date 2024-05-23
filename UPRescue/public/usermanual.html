@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+    @Author: Anish Karumuri, Hung-Nghi Vu, Yutaka Roberts, Eric Su, Calvin Phuong
+-->
+<html>
+<head>
+    <title>User Manual</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/um.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>User Manual</h1>
+        </div>
+        <div class="main">
+            <div class="topnav">
+                <a href="index.html">Map</a>
+                <a href="home.html">Suggestions</a>
+                <a href="resourceIndex.html">Resource Index</a>
+                <a href="usermanual.html">User Manual</a>
+                <a href="about.html">About</a>
+                <a href="login.html" id="admin">Admin</a>
+                <select id="languageSwitch" onchange="switchLanguage3(this.value)">
+                    <option value="en3">English</option>
+                    <option value="es3">Español</option>
+                </select>
+            </div>
+        </div>
+        <div class="descriptions">
+            <h1 id="step0">Step 0 - Count 5 Mississippi so that radio buttons become enabled; it takes time to get your location :)</h1>
+            <h1 id="step1">Step 1 - Choose what resource you would like and then press submit</h1>
+            <h1 id="step2">Step 2 - The locations are marked 1-5; 1 being the closest and 5 being the farthest</h1>
+            <h1 id="step3">Step 3 - Click the location you like and then the address should appear in the top search bar</h1>
+            <h1 id="step4">Step 4 - Click the search bar and press the address in the dropdown and the Map should take you there</h1>
+            <h1 id="step5">Step 5 - If you click on the place in the map you can go directly to google maps for directions</h1>
+        </div>
+    </header>
+    <script>
+        const langTextsManual = {
+            en: {
+                map: "Map",
+                suggestions: "Suggestions",
+                resourceIndex: "Resource Index",
+                userManual: "User Manual",
+                about: "About",
+                admin: "Admin",
+                title: "User Manual",
+                step0: "Step 0 - Count 5 Mississippi so that radio buttons become enabled; it takes time to get your location :)",
+                step1: "Step 1 - Choose what resource you would like and then press submit",
+                step2: "Step 2 - The locations are marked 1-5; 1 being the closest and 5 being the farthest",
+                step3: "Step 3 - Click the location you like and then the address should appear in the top search bar",
+                step4: "Step 4 - Click the search bar and press the address in the dropdown and the Map should take you there",
+                step5: "Step 5 - If you click on the place in the map you can go directly to google maps for directions"
+            },
+            es: {
+                map: "Mapa",
+                suggestions: "Sugerencias",
+                resourceIndex: "Índice de Recursos",
+                userManual: "Manual del Usuario",
+                about: "Acerca de",
+                admin: "Administración",
+                title: "Manual del Usuario",
+                step0: "Paso 0 - Cuenta hasta 5 Mississippi para que los botones de radio se activen; lleva tiempo obtener tu ubicación :)",
+                step1: "Paso 1 - Elige el recurso que desearías y luego presiona enviar",
+                step2: "Paso 2 - Las ubicaciones están marcadas del 1 al 5; siendo 1 la más cercana y 5 la más lejana",
+                step3: "Paso 3 - Haz clic en la ubicación que te gusta y entonces la dirección debería aparecer en la barra de búsqueda superior",
+                step4: "Paso 4 - Haz clic en la barra de búsqueda y presiona la dirección en el desplegable y el mapa te llevará allí",
+                step5: "Paso 5 - Si haces clic en el lugar en el mapa puedes ir directamente a google maps para obtener direcciones"
+            }
+        };
+
+        function switchLanguage3(language) {
+            const langKey = language.slice(0, -1); // Removes the last character ('3') to match the keys in our langTextsManual object
+            document.querySelector('.title h1').textContent = langTextsManual[langKey].title;
+            document.querySelectorAll('.descriptions h1')[0].textContent = langTextsManual[langKey].step0;
+            document.querySelectorAll('.descriptions h1')[1].textContent = langTextsManual[langKey].step1;
+            document.querySelectorAll('.descriptions h1')[2].textContent = langTextsManual[langKey].step2;
+            document.querySelectorAll('.descriptions h1')[3].textContent = langTextsManual[langKey].step3;
+            document.querySelectorAll('.descriptions h1')[4].textContent = langTextsManual[langKey].step4;
+            document.querySelectorAll('.descriptions h1')[5].textContent = langTextsManual[langKey].step5;
+
+            // Update the navigation links
+            const navLinks = document.querySelectorAll('.topnav a');
+            navLinks[0].textContent = langTextsManual[langKey].map;
+            navLinks[1].textContent = langTextsManual[langKey].suggestions;
+            navLinks[2].textContent = langTextsManual[langKey].resourceIndex;
+            navLinks[3].textContent = langTextsManual[langKey].userManual;
+            navLinks[4].textContent = langTextsManual[langKey].about;
+            navLinks[5].textContent = langTextsManual[langKey].admin;
+        }
+
+        // Set default language to English on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage3('en3');
+        });
+    </script>
+</body>
+</html>

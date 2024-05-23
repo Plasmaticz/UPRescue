@@ -1,0 +1,144 @@
+<!doctype html>
+<!--
+    @Author: Anish Karumuri, Hung-Nghi Vu, Yutaka Roberts, Eric Su, Calvin Phuong
+-->
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Map</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/mapstyle.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/autocompleteStyle.css" />
+
+    <script type="module" src="javascripts/geolocation.js"></script>
+    <script src="/javascripts/autocomplete.js"></script>
+    <script type="text/javascript" src="javascripts/postfilter.js"></script>
+    <script type="module" src="javascripts/mapjavascript.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <script src="/javascripts/postfilter.js"></script>
+    <script src="/javascripts/autocomplete.js"></script>
+    <script type="module" src="javascripts/geolocation.js"></script>
+    <script type="module" src="javascripts/mapjavascript.js"></script>
+    <script src="/javascripts/postfilter.js"></script>
+
+
+
+  </head>
+  <body>
+      <h3>UPRescue Resource Finder</h3>
+
+      <div id="loadingScreen">
+        <div class="loader"></div>
+      </div>
+
+      <!-- Navigation bar -->
+      <div class="topnav" id="topNav">
+          <a href="index.html" class="active">Home</a>
+          <a href="map.html">Map</a>
+          <a href="resourceIndex.html">Resource Index</a>
+          <a href="usermanual.html">User Manual</a>
+          <a href="about.html">About</a>
+      </div>
+
+      <!--Make sure the form has the autocomplete function switched off:-->
+      <form id="autoCompBox" autocomplete="off" action="/action_page.php">
+        <div class="autocomplete">
+          <input id="myInput" type="text" name="myCountry" placeholder="Enter name">
+        </div>
+      </form>
+
+      <!--Search Box-->
+      <div id="searchBox">
+          <input type="text" placeholder="Enter an Address" id="inputField"></input><br>
+      </div>
+
+      <div id="sercher">
+          <button type="button" id="nearbySearchBtn">Search Nearby</button>
+      </div>
+
+  <form id="filterForm">
+      <div id="filter">
+          <div class="radio-group">
+              <input type="radio" id="foodBanks" name="organizationType" value="FoodBanks" disabled>
+              <label for="foodBanks">Food Banks</label>
+          </div>
+
+          <div class="radio-group">
+              <input type="radio" id="homelessShelters" name="organizationType" value="HomelessShelters" disabled>
+              <label for="homelessShelters">Homeless Shelters</label>
+          </div>
+
+          <div class="radio-group">
+              <input type="radio" id="addictionRehab" name="organizationType" value="AddictionRehab" disabled>
+              <label for="addictionRehab">Addiction Rehabilitation</label>
+          </div>
+
+          <div class="radio-group">
+              <input type="radio" id="alternativeShelter" name="organizationType" value="AlternativeShelter" disabled>
+              <label for="alternativeShelter">Alternative Shelters</label>
+          </div>
+
+          <div class="radio-group">
+              <input type="radio" id="healthClinics" name="organizationType" value="HealthClinics" disabled>
+              <label for="healthClinics">Health Clinics</label>
+          </div>
+
+          <div class="radio-group">
+              <input type="radio" id="all" name="organizationType" value="All" disabled>
+              <label for="all">All of the above</label>
+          </div>
+
+          <input type="submit" value="Submit" id="submitBtn" disabled>
+      </div>
+  </form>
+
+
+      <div id="foodBanksList" class="center-content"></div> <!--Added this for the database-->
+
+
+      <!--The div element for the map -->
+      <div id="map"></div>
+
+      <!--Data display element -->
+      <div  id="placesDataDisplay">
+          <textarea placeholder="If you wanna keep notes :)" id=inputField2></textarea><br><br/>
+      </div>
+
+      <!--Place holder for userlocation-->
+      <div hidden id="userLocationDisplay">
+          <p id="locationText">Location: <span id="latitude"></span>, <span id="longitude"></span></p>
+      </div>
+
+      <div id="remainingList" class="center-content"></div> <!--Added this for the database-->
+
+      <!--Place holder for requested address and coordinates-->
+      <div hidden id="requestedAddressDisplay" >
+          <p>Requested Address: <span id="requestedAddress"></span></p>
+      <!-- Displaying coordinates -->
+          <p>Coordinates: <span id="rlatitude"></span>, <span id="rlongitude"></span></p>
+      </div>
+
+
+      
+      <!--Geolocation; Asks for location of user-->
+      <script src="/javascripts/geolocation.js"></script>
+
+      <!-- Google Maps API Key -->
+      <script>
+          (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set(["places"]), e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+              ({ key: "AIzaSyAw00m47zOCrykLCW3n2uC3dj824T80J3Y", v: "weekly" });
+      </script>
+
+      <!-- Google Places API Key -->
+      <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBaQJRV31brQLVC6A51U4N26IWWIeHMMgA"></script>
+      
+  </body>
+</html>

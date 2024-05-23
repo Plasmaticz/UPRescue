@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+    @Author: Anish Karumuri, Hung-Nghi Vu, Yutaka Roberts, Eric Su, Calvin Phuong
+-->
+<html>
+<head>
+
+	<title>UPRescue</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="stylesheets/home.css">
+
+
+</head>
+<body>
+	<div class="container">
+		
+		<div class="topnav">
+			<a href="index.html">Map</a>
+			<a href="home.html">Suggestions</a>
+			<a href="resourceIndex.html">Resource Index</a>
+			<a href="usermanual.html">User Manual</a>
+			<a href="about.html">About</a>
+			<a href="login.html" id = "admin">Admin</a>
+			<select id="languageSwitch" onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+		</div>
+		
+
+
+
+
+		
+		<div class="suggestion">
+			<!-- Source for contact form: https://web3forms.com/-->
+
+			<form action="https://api.web3forms.com/submit" method="POST">
+
+			<!-- Replace with your Access Key -->
+			<input type="hidden" name="access_key" value="f2445d9e-b65f-41b4-b913-cd07c8bff1d4">
+			
+			<!-- Form Inputs. Each input must have a name="" attribute -->
+			<input type="text" name="name" placeholder="Your name" required>
+			<input type="email" name="email" placeholder="Your email" required> <br><br>
+			<textarea name="message" placeholder="Your suggestion" required></textarea> <br>
+			
+			<!-- hCaptcha Spam Protection -->
+			<div class="h-captcha" data-captcha="true"></div>
+		
+			<button id="submit" type="submit">Submit Suggestion</button>
+	
+			</form>
+		</div>
+
+		
+
+		<!-- Required for hCaptcha -->
+		<script src="https://web3forms.com/client/script.js" async defer></script>
+
+
+        <div class="text-box">
+            <h1 id="suggestionsTitle">Suggestions</h1>
+        </div>
+
+		<div class="social-icons">
+
+			<a href="https://www.linkedin.com/school/university-of-portland/"><img src="images/linkedin.png"></a>
+			<a href="https://github.com/upcs/cs341-spring-2024-data-morning"><img src="images/github.png"></a>
+			<a href="https://www.instagram.com/uportland/"><img src="images/instagram.png"></a>
+
+
+
+		</div>
+		
+
+	</div>
+
+	<script>
+        const langTexts = {
+            en: {
+                map: "Map",
+                home: "Suggestions",  
+                resourceIndex: "Resource Index",
+                usermanual: "User Manual",  
+                about: "About",
+                admin: "Admin",
+                namePlaceholder: "Your name",
+                emailPlaceholder: "Your email",
+                messagePlaceholder: "Your suggestion",
+                submitButton: "Submit Suggestion",
+                suggestionsTitle: "Suggestions"
+            },
+            es: {
+                map: "Mapa",
+                home: "Sugerencias",  
+                resourceIndex: "Índice de Recursos",
+                usermanual: "Manual del Usuario",  
+                about: "Acerca de",
+                admin: "Administración",
+                namePlaceholder: "Tu nombre",
+                emailPlaceholder: "Tu correo electrónico",
+                messagePlaceholder: "Tu sugerencia",
+                submitButton: "Enviar Sugerencia",
+                suggestionsTitle: "Sugerencias"
+            }
+        };
+
+        function switchLanguage(language) {
+            // Update text for all links and placeholders
+            document.querySelectorAll('.topnav a').forEach((link, index) => {
+                const key = link.href.split('/').pop().replace('.html', '').replace('index', 'map');
+                if (langTexts[language][key]) {
+                    link.textContent = langTexts[language][key];
+                }
+            });
+
+            // Update form placeholders and button text
+            document.getElementById('nameInput').placeholder = langTexts[language].namePlaceholder;
+            document.getElementById('emailInput').placeholder = langTexts[language].emailPlaceholder;
+            document.getElementById('messageInput').placeholder = langTexts[language].messagePlaceholder;
+            document.getElementById('submit').textContent = langTexts[language].submitButton;
+            document.getElementById('suggestionsTitle').textContent = langTexts[language].suggestionsTitle;
+        }
+
+        // Initialize default language as English
+        switchLanguage('en');
+    </script>
+
+</body>
+</html>

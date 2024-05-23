@@ -1,0 +1,34 @@
+{
+    "name": "uprescue",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "test": "jest --coverage"
+    },
+    "dependencies": {
+        "cookie-parser": "~1.4.4",
+        "coverage": "^0.4.1",
+        "debug": "~2.6.9",
+        "express": "^4.19.1",
+        "http-errors": "~1.6.3",
+        "jade": "^0.29.0",
+        "jest-test-performance": "^1.0.1",
+        "morgan": "~1.9.1",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "supertest": "^6.3.4"
+    },
+    "jest": {
+        "globals": {
+            "google": {},
+            "places": {}
+        },
+        "setupFilesAfterEnv": [
+            "jest-test-performance"
+        ]
+    }
+}

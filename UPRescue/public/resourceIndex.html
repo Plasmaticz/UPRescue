@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+    @Author: Anish Karumuri, Hung-Nghi Vu, Yutaka Roberts, Eric Su, Calvin Phuong
+-->
+<html>
+<head>
+    <title>Resource Index</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/ri.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Resource Index</h1>
+        </div>
+        <div class="main">
+            <div class="topnav">
+                <a href="index.html">Map</a>
+                <a href="home.html">Suggestions</a>
+                <a href="resourceIndex.html" class="active">Resource Index</a>
+                <a href="usermanual.html">User Manual</a>
+                <a href="about.html">About</a>
+                <a href="login.html">Admin</a>
+                <select id="languageSwitch" onchange="switchLanguage1(this.value)">
+                    <option value="en1">English</option>
+                    <option value="es1">Español</option>
+                </select>
+            </div>
+        </div>
+        <div class="descriptions">
+            <h1 id="homelessShelters">Homeless Shelters: Shelters provide temporary housing and support services for homeless individuals and families. They aim to offer a safe environment for those in need, assisting with basic necessities and the transition to permanent housing.</h1>
+            <h1 id="addictionRehab">Addiction Rehabilitation Centers/Programs: These programs offer support and treatment for individuals struggling with substance abuse. Services may include detoxification, therapy, and support groups, designed to help individuals overcome addiction and lead healthier lives.</h1>
+            <h1 id="alternativeShelter">Alternative Shelter Communities: Alternative shelters offer unique housing solutions outside of traditional shelter systems, such as tiny house villages or communal living spaces. These communities focus on creating supportive environments for homeless individuals or those seeking a more communal lifestyle.</h1>
+            <h1 id="foodbanks">Foodbanks/Meals: Foodbanks and meal programs provide free or low-cost food to individuals and families in need. These resources aim to combat hunger and food insecurity, ensuring that everyone has access to nutritious meals.</h1>
+            <h1 id="healthClinics">Health Clinics: Health clinics offer medical services to the community, often focusing on low-income individuals or those without insurance. Services may include primary care, mental health services, and specialized treatments, aiming to ensure accessible healthcare for all.</h1>
+        </div>
+    </header>
+    <script>
+        const langTextsResource = {
+            en: {
+                map: "Map",
+                suggestions: "Suggestions",
+                resourceIndex: "Resource Index",
+                userManual: "User Manual",
+                about: "About",
+                admin: "Admin",
+                title: "Resource Index",
+                homelessShelters: "Homeless Shelters: Shelters provide temporary housing and support services for homeless individuals and families. They aim to offer a safe environment for those in need, assisting with basic necessities and the transition to permanent housing.",
+                addictionRehab: "Addiction Rehabilitation Centers/Programs: These programs offer support and treatment for individuals struggling with substance abuse. Services may include detoxification, therapy, and support groups, designed to help individuals overcome addiction and lead healthier lives.",
+                alternativeShelter: "Alternative Shelter Communities: Alternative shelters offer unique housing solutions outside of traditional shelter systems, such as tiny house villages or communal living spaces. These communities focus on creating supportive environments for homeless individuals or those seeking a more communal lifestyle.",
+                foodbanks: "Foodbanks/Meals: Foodbanks and meal programs provide free or low-cost food to individuals and families in need. These resources aim to combat hunger and food insecurity, ensuring that everyone has access to nutritious meals.",
+                healthClinics: "Health Clinics: Health clinics offer medical services to the community, often focusing on low-income individuals or those without insurance. Services may include primary care, mental health services, and specialized treatments, aiming to ensure accessible healthcare for all."
+            },
+            es: {
+                map: "Mapa",
+                suggestions: "Sugerencias",
+                resourceIndex: "Índice de Recursos",
+                userManual: "Manual del Usuario",
+                about: "Acerca de",
+                admin: "Administración",
+                title: "Índice de Recursos",
+                homelessShelters: "Refugios para Personas sin Hogar: Los refugios proporcionan vivienda temporal y servicios de apoyo para individuos y familias sin hogar. Su objetivo es ofrecer un entorno seguro para aquellos que lo necesitan, ayudando con las necesidades básicas y la transición a una vivienda permanente.",
+                addictionRehab: "Centros/Programas de Rehabilitación de Adicciones: Estos programas ofrecen apoyo y tratamiento a individuos que luchan contra el abuso de sustancias. Los servicios pueden incluir desintoxicación, terapia y grupos de apoyo, diseñados para ayudar a las personas a superar la adicción y llevar una vida más saludable.",
+                alternativeShelter: "Comunidades de Refugios Alternativos: Los refugios alternativos ofrecen soluciones de vivienda únicas fuera de los sistemas de refugio tradicionales, como aldeas de casas pequeñas o espacios de vida comunitarios. Estas comunidades se centran en crear entornos de apoyo para individuos sin hogar o aquellos que buscan un estilo de vida más comunitario.",
+                foodbanks: "Bancos de Alimentos/Comidas: Los bancos de alimentos y los programas de comidas proporcionan alimentos gratuitos o de bajo costo a individuos y familias necesitadas. Estos recursos tienen como objetivo combatir el hambre y la inseguridad alimentaria, asegurando que todos tengan acceso a comidas nutritivas.",
+                healthClinics: "Clínicas de Salud: Las clínicas de salud ofrecen servicios médicos a la comunidad, a menudo enfocándose en individuos de bajos ingresos o sin seguro. Los servicios pueden incluir atención primaria, servicios de salud mental y tratamientos especializados, con el objetivo de garantizar un acceso a la atención médica accesible para todos."
+            }
+        };
+
+        function switchLanguage1(language) {
+            const langKey = language.slice(0, -1); // Removes the last character ('1') to match the keys in our langTextsResource object
+            document.querySelector('.title h1').textContent = langTextsResource[langKey].title;
+            document.querySelectorAll('.descriptions h1')[0].textContent = langTextsResource[langKey].homelessShelters;
+            document.querySelectorAll('.descriptions h1')[1].textContent = langTextsResource[langKey].addictionRehab;
+            document.querySelectorAll('.descriptions h1')[2].textContent = langTextsResource[langKey].alternativeShelter;
+            document.querySelectorAll('.descriptions h1')[3].textContent = langTextsResource[langKey].foodbanks;
+            document.querySelectorAll('.descriptions h1')[4].textContent = langTextsResource[langKey].healthClinics;
+
+            // Update the navigation links
+            const navLinks = document.querySelectorAll('.topnav a');
+            navLinks[0].textContent = langTextsResource[langKey].map;
+            navLinks[1].textContent = langTextsResource[langKey].suggestions;
+            navLinks[2].textContent = langTextsResource[langKey].resourceIndex;
+            navLinks[3].textContent = langTextsResource[langKey].userManual;
+            navLinks[4].textContent = langTextsResource[langKey].about;
+            navLinks[5].textContent = langTextsResource[langKey].admin;
+        }
+
+        // Set default language to English on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage1('en1');
+        });
+    </script>
+</body>
+</html>

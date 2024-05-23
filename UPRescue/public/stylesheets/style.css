@@ -1,0 +1,374 @@
+/* General Body Styling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #CBC3E3  ; /* This will be visible only if the map doesn't cover the full page */
+  color: #fff;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/mountain.jpg); 
+  background-size: cover; /* Cover the entire viewport without stretching the image */
+  background-position: center; /* Center the image in the viewport */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed; /* Fix the background image during scroll */
+}
+
+h3 {
+  text-align: center; /* This will center the title text */
+  margin-top: 1em; /* Adjust top margin as needed */
+  margin-bottom: 1em; /* Adjust bottom margin as needed */
+  font-size: 1.5rem; /* Scales the font size based on the root element's font size. */
+
+}
+
+#autoCompBox {
+  display: flex; /* Use flexbox to align children */
+  justify-content: center; /* Center the items horizontally */ 
+  padding: 15px 25px; /* Padding for the navigation, adjust as needed */
+  
+}
+
+#myInput {
+  flex-wrap: wrap; /* Allow the items to wrap on small screens */
+  background-color: transparent; 
+  padding: 5px 250px; /* Padding for the navigation, adjust as needed */
+  text-align: center;
+  border-color: white;
+}
+
+
+#searchBox {
+  display: flex; /* Use flexbox to align children */
+  justify-content: center; /* Center the items horizontally */ 
+  padding: 10px 25px; /* Padding for the navigation, adjust as needed */
+  visibility: hidden;
+  display: none;
+}
+
+#inputField {
+  flex-wrap: wrap; /* Allow the items to wrap on small screens */
+  background-color: transparent; 
+  padding: 5px 250px; /* Padding for the navigation, adjust as needed */
+}
+
+#sercher{
+  display: flex; /* Use flexbox to align children */
+  justify-content: center; /* Center the items horizontally */
+  display: none;
+}
+
+#infoBox{
+  height: 15%; /* Adjust the height */
+  width: calc(100% - 100px); /* Adjust width, accounting for padding */
+  margin: 50px; /* Same as body padding for consistency */
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 15px;
+  display: none;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+#closeInfoBox{
+  right: 150px;
+}
+
+ #nearbySearchBtn {
+  flex-wrap: wrap; /* Allow the items to wrap on small screens */
+  background-color: transparent; 
+  padding: 10px 50px; /* Padding for the navigation, adjust as needed */
+  color: white;
+  visibility: hidden;
+ }
+
+ #nearbySearchBtn:hover{
+  background-color: white;
+  color: black;
+
+ }
+
+#remainingList {
+  padding: 10px 50px;
+}
+ 
+
+#filter input[type="submit"] {
+  padding: 14px 16px; /* Spacing inside the buttons, matching your nav links */
+  background-color: transparent; /* Background color */
+  color: white; /* Text color */
+  font-size: 15px; /* Font size */
+  text-align: center; /* Center the text */
+  border: none; /* No border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+#filter input[type="submit"]:hover {
+  background-color: white; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+#filter input[type="submit"]:active {
+  background-color: blueviolet; /* Background color when active */
+  color: white; /* Text color when active */
+}
+
+#foodBanksList {
+    display: none; /* This hides the div when the page loads */
+    font-weight: bold; /* This will make all text inside bold */
+
+}
+
+#admin{
+  display:none;
+}
+
+.bold-text {
+    font-weight: bold; /* This will make the text bold for any element with the 'bold-text' class */
+}
+
+
+.food-bank-item-button {
+  padding: 14px 16px; /* Spacing inside the buttons */
+  text-decoration: none; /* Removes underline from links - may not be needed for buttons */
+  color: white; /* Text color for the buttons */
+  font-size: 15px; /* Size of the font */
+  text-align: center; /* Center the text inside the buttons */
+  background-color: transparent; /* Background color of the buttons */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.center-content {
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+    padding: 20px; /* Add some padding inside the div */
+    border-radius: 8px; /* Rounded corners for the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    text-align: center; /* Center the text inside the div */
+    margin: auto; /* Center the div if it has a specified width */
+    width: 80%; /* Example width, adjust as necessary */
+}
+
+.food-bank-item-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.info-detail {
+    display: block; /* Makes each detail appear on a new line */
+    margin-bottom: 5px; /* Adds space below each detail */
+}
+
+.food-bank-item-button:active {
+  background-color: blueviolet;
+  color: white;
+}
+
+.food-bank-item {
+  margin-bottom: 10px; /* Add space between buttons */
+  text-align: center; /* Center the buttons */
+}
+
+/* Top Navigation Bar */
+.topnav {
+    display: flex; /* Use flexbox to align children */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow the items to wrap on small screens */
+    background-color: transparent;
+    padding: 10px 50px; /* Padding for the navigation, adjust as needed */
+}
+
+.topnav a, .topnav select {
+    padding: 14px 16px; /* Spacing inside the links */
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Text color for the links */
+    font-size: 15px; /* Size of the font */
+    text-align: center; /* Center the text inside the links */
+    background-color: transparent; /* Background color of the links */
+    border: none; /* No borders */
+    outline: none; /* Removes outline */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.topnav a:active {
+    background-color: blueviolet;
+    color: white;
+}
+
+.topnav #languageSwitch:hover {
+  background-color: white;
+  color: black;
+} 
+
+.topnav #languageSwitch:active {
+  background-color: blueviolet;
+  color: white;
+} 
+.topnav select {
+    appearance: none; /* Disable default browser appearance */
+    -webkit-appearance: none; /* Also for Safari */
+    background: url(../images/drop-down-arrow.png) no-repeat right 14px center / 12px 12px; /* Adjust size and position accordingly */
+    background-color: transparent; /* Transparent background */
+    border-radius: 0; /* Optional: if you want to remove the border-radius */
+    padding-right: 30px; /* Add padding to prevent text from overlapping the arrow */
+    cursor: pointer; /* Ensures the cursor changes to pointer on hover */
+    color: white; /* Text color for consistency */
+}
+
+.topnav option {
+  color: black;
+}
+
+/* You may need to adjust the path to the arrow image */
+
+
+
+/* Loading screen styles */
+#loadingScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/loading.jpg);
+  background-size: cover; /* Cover the entire area; use 'contain' to fit the entire image */
+  background-position: center; /* Center the background image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Simple loader animation */
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#inputField2 {
+    display: flex; /* Use flexbox to align children */
+    justify-content: center; /* Center the items horizontally */
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+}
+
+#filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center; /* Align the items vertically in the center */
+    margin-bottom: 10px; /* Add space below each radio button group */
+}
+
+.radio-group label {
+    margin-left: 8px; /* Add some space between the radio button and the label */
+}
+
+.radio-group input[type="radio"]:checked+label {
+  font-weight: bold;
+  font-style: italic;
+  background-color: rgb(170, 80, 255);
+  color: white;
+}
+
+/* Link Styling */
+a {
+  color: #00B7FF; 
+  text-decoration: none; /* No underlines on links */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline links on hover for better user interaction */
+}
+
+/* Map Container */
+#map {
+  height: 60%; /* Adjust the height */
+  width: calc(100% - 100px); /* Adjust width, accounting for padding */
+  margin: 50px; /* Same as body padding for consistency */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* Adds a shadow for depth */
+}
+
+/* Adjust Sizing for mobile devices  */
+@media (max-width: 1000px) {
+    #map {
+        height: 75%; /* Smaller height on smaller screens */
+        width: calc(100% - 20px); /* Adjust width, smaller padding on smaller screens */
+        margin: 10px; /* Smaller margin on smaller screens */
+    }
+
+    .topnav {
+        padding: 10px; /* Smaller padding on smaller screens */
+    }
+
+    .topnav a {
+      padding: 14px 16px; /* Spacing inside the links */
+      text-decoration: none; /* Removes underline from links */
+      color: white; /* Text color for the links */
+      font-size: 23px; /* Size of the font */
+      text-align: center; /* Center the text inside the links */
+    }
+
+    .food-bank-item-button {
+        padding: 14px 16px; /* Spacing inside the buttons */
+        text-decoration: none; /* Removes underline from links - may not be needed for buttons */
+        color: white; /* Text color for the buttons */
+        font-size: 40px; /* Size of the font */
+        text-align: center; /* Center the text inside the buttons */
+        background-color: transparent; /* Background color of the buttons */
+        border: none; /* Remove border */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    }
+
+    #filter {
+        font-size: 25px;
+    }
+
+
+    #filter input[type="submit"] {
+      padding: 14px 16px; /* Spacing inside the buttons, matching your nav links */
+      background-color: transparent; /* Background color */
+      color: white; /* Text color */
+      font-size: 25px; /* Font size */
+      text-align: center; /* Center the text */
+      border: none; /* No border */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    }
+    
+    #infoBox{
+      height: 13%; /* Adjust the height */
+      width: calc(100% - 100px); /* Adjust width, accounting for padding */
+      margin: 50px; /* Same as body padding for consistency */
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 25px;
+      display: none;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+}

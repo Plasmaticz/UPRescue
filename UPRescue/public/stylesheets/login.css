@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Century Gothic;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/login.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex; /* Added */
+    justify-content: center; /* Added */
+    align-items: center; /* Added */
+}
+
+/* Top Navigation Bar */
+.topnav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: transparent;
+    padding: 10px 50px;
+    position: absolute; /* Added */
+    top: 0; /* Added */
+    right: 0; /* Added */
+    left: 0; /* Added */
+}
+
+.topnav a {
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.topnav a:active {
+    background-color: blueviolet;
+    color: white;
+}
+
+/* Login Form */
+.login-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    color: #fff;
+}
+
+.login-form h1 {
+    margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: darkviolet;
+}
+
+/* General Link Styling */
+a {
+    color: #00B7FF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .login-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .login-form h1 {
+        font-size: 24px;
+    }
+    .topnav {
+        padding: 10px; /* Smaller padding on smaller screens */
+    }
+
+	.topnav a {
+		padding: 14px 16px; /* Spacing inside the links */
+		text-decoration: none; /* Removes underline from links */
+		color: white; /* Text color for the links */
+		font-size: 23px; /* Size of the font */
+		text-align: center; /* Center the text inside the links */
+	}
+}

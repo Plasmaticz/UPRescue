@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+    @Author: Anish Karumuri, Hung-Nghi Vu, Yutaka Roberts, Eric Su, Calvin Phuong
+-->
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/about.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>About Us</h1>
+        </div>
+        <div class="main">
+            <div class="topnav">
+                <a href="index.html">Map</a>
+                <a href="home.html">Suggestions</a>
+                <a href="resourceIndex.html">Resource Index</a>
+                <a href="usermanual.html">User Manual</a>
+                <a href="about.html">About</a>
+                <select id="languageSwitch" onchange="switchLanguage2(this.value)">
+                    <option value="en2">English</option>
+                    <option value="es2">Español</option>
+                </select>
+            </div>
+        </div>
+        <div class="descriptions">
+            <h1>Empowering Lives, One Map at a Time</h1>
+            <h2>
+                Welcome to UPRescue, an innovative project developed by Anish Karumuri, Calvin Phuong, Eric Su, Hung-Nghi Vu, Yutaka Roberts. With a deep understanding of the challenges faced by the homeless population, we've embarked on a mission to create a bridge between those in need and the resources that can make a difference in their lives.
+            </h2>
+        </div>
+    </header>
+    <script>
+        const langTextsAbout = {
+            en: {
+                map: "Map",
+                suggestions: "Suggestions",
+                resourceIndex: "Resource Index",
+                userManual: "User Manual",
+                about: "About",
+                admin: "Admin",
+                title: "About Us",
+                header: "Empowering Lives, One Map at a Time",
+                description: "Welcome to UPRescue, an innovative project developed by Anish Karumuri, Calvin Phuong, Eric Su, Hung-Nghi Vu, Yutaka Roberts. With a deep understanding of the challenges faced by the homeless population, we've embarked on a mission to create a bridge between those in need and the resources that can make a difference in their lives."
+            },
+            es: {
+                map: "Mapa",
+                suggestions: "Sugerencias",
+                resourceIndex: "Índice de Recursos",
+                userManual: "Manual del Usuario",
+                about: "Acerca de",
+                admin: "Administración",
+                title: "Acerca de Nosotros",
+                header: "Empoderando Vidas, Un Mapa a la Vez",
+                description: "Bienvenidos a UPRescue, un proyecto innovador desarrollado por Anish Karumuri, Calvin Phuong, Eric Su, Hung-Nghi Vu, Yutaka Roberts. Con un profundo entendimiento de los desafíos que enfrenta la población sin hogar, hemos emprendido una misión para crear un puente entre aquellos en necesidad y los recursos que pueden marcar una diferencia en sus vidas."
+            }
+        };
+
+        function switchLanguage2(language) {
+            const langKey = language.slice(0, -1); // Removes the last character ('2') to match the keys in our langTextsAbout object
+            document.querySelector('.title h1').textContent = langTextsAbout[langKey].title;
+            document.querySelector('.descriptions h1').textContent = langTextsAbout[langKey].header;
+            document.querySelector('.descriptions h2').textContent = langTextsAbout[langKey].description;
+
+            // Update the navigation links
+            const navLinks = document.querySelectorAll('.topnav a');
+            navLinks[0].textContent = langTextsAbout[langKey].map;
+            navLinks[1].textContent = langTextsAbout[langKey].suggestions;
+            navLinks[2].textContent = langTextsAbout[langKey].resourceIndex;
+            navLinks[3].textContent = langTextsAbout[langKey].userManual;
+            navLinks[4].textContent = langTextsAbout[langKey].about;
+            navLinks[5].textContent = langTextsAbout[langKey].admin;
+        }
+
+        // Set default language to English on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage2('en2');
+        });
+    </script>
+</body>
+</html>
+
