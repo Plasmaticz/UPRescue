@@ -82,17 +82,6 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `upcs`, `cs341-spring-2024-data-morning`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
 
 * [![JavaScript][JS.com]][JS-url]
@@ -152,7 +141,7 @@ To install npm on your local machine, type this into your terminal / command lin
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Check User manual when running webpage
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -163,16 +152,22 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-Here was the original roadmap from the 1st team:
+Here was the original roadmap from the 1st team from Spring 2024:
 - [X] Create Map
     - [X] Add Geolocation to get the user's current location
     - [X] Create markers for each location
     - [ ] Add Google Map API InfoWindows for each place
 - [X] Create Database
     - [X] Add data found on internet and Multnomah County Website
-    - [ ] 
-- [ ] Login in Page to modify database
-    - [ ] Nested Feature
+- [X] Admin Login Page added (*** NOT INCLUDED ***in 1st deployment of website)
+    - [ ] Add and Delete Function (Not working)
+- [X] Deploy Website using NameCheap
+      
+Next team (ideas):
+- update database in *cloud* (cost money) or keep in express
+- webscraper to find more resources / shelters / food banks in live time
+    - Ex: https://www.multco.us/dd/shelter-and-homeless-services
+- implement better distance finding (currently just straight lines and math)
 
 See the [open issues](https://github.com/upcs/cs341-spring-2024-data-morning/issues) for a full list of proposed features (and known issues).
 
@@ -189,6 +184,9 @@ See the [open issues](https://github.com/upcs/cs341-spring-2024-data-morning/iss
    npm uninstall sqlite3
    npm install sqlite3
    ```
+
+2. Admin Login page
+   Has username and password, but functions don't work 
    
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -197,7 +195,9 @@ See the [open issues](https://github.com/upcs/cs341-spring-2024-data-morning/iss
 
 <!-- LICENSE -->
 ## License
-
+*All work belongs to UP*
+<br/>
+<br/>
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -207,8 +207,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+1st Team (Spring 2024)
+- Calvin Phuong - phuong24@up.edu
+- Eric Su - su26@up.edu
+- Hung Vu - vuh26@up.edu
+- Anish Karumuri - karumuri26@up.edu
+- Yutaka Roberts - robertsy@up.edu
 
+<br/>
+*Add Next Teams here:*
+<br/>
+<br/>
 Project Link: [https://github.com/upcs/cs341-spring-2024-data-morning](https://github.com/upcs/cs341-spring-2024-data-morning)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
